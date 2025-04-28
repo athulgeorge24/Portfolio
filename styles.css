@@ -1,0 +1,586 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #282c34;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #1d1f27;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+
+#intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 80%;
+    margin: auto;
+}
+
+#intro-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #555;
+}
+
+#intro-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff9800;
+    text-align: right;
+    margin-bottom: 50px;
+}
+/* Hover Effect */
+#about p:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Position CV Button at Top-Right */
+.cv-button {
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: absolute; /* Use absolute positioning */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+}
+
+/* Optional: Button Hover Effect */
+.cv-button:hover {
+    background-color: #f57c00; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight scale-up effect */
+}
+
+#full-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    display: inline-block;
+}
+
+#typing {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9800;
+    display: inline-block;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+
+/* Section Styling */
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    padding: 100px 20px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+section h2 {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+/* Connect Section */
+#connect {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: #222;
+}
+
+#connect h2 {
+    font-size: 28px;
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+
+#connect p {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+#connect ul {
+    list-style: none;
+    padding: 0;
+}
+
+#connect ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+#connect ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+#connect ul li a:hover {
+    color: #ff9800;
+}
+
+/* Footer */
+footer {
+    background: #282c34;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+/* Education Section */
+#education {
+    background: #222;
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Reduce Text Box Size */
+.edu-block {
+    width: 70%; /* Slightly smaller width */
+    max-width: 500px; /* Restrict maximum size */
+    min-height: 100px; /* Reduce height */
+    margin: 15px auto; /* Keep them centered */
+    padding: 15px; /* Less padding */
+    border-radius: 5px;
+    background: #333;
+}
+
+/* Heading Styles */
+#education h2 {
+    font-size: 28px;
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+
+.edu-block h3 {
+    font-size: 22px; /* Slightly smaller text */
+    color: #ff9800;
+}
+
+.edu-block p {
+    font-size: 16px; /* Reduce paragraph text size */
+    color: white;
+}
+
+/* Adjust Extracurricular Activities */
+.extracurricular {
+    background: #444;
+    border-left: 5px solid #ff9800;
+    margin-top: 50px; /* Moves extracurricular section lower */
+}
+
+
+/* Projects Section */
+#projects {
+    background: #222;
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Arrange Projects Side by Side */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between project boxes */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Project Box Styling */
+.project {
+    width: 300px; /* Set equal width for all projects */
+    padding: 20px;
+    border-radius: 5px;
+    background: #333;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Project Hover Effect */
+.project:hover {
+    transform: translateY(-5px);
+    background: #444;
+}
+
+/* Project Images */
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Hyperlinked Titles */
+.project h3 a {
+    color: #ff9800;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.project h3 a:hover {
+    color: #ff5722;
+}
+/* Skills Section Styling */
+#skills {
+    padding: 60px 20px;
+    background-color: #222222;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  #skills h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffa500; /* orange color */
+  }
+  
+  /* Skills Container */
+  .skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+  
+  /* Individual Column */
+  .skills-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .skill-category {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #f0bb5a; /* orange color */
+    text-align: center;
+  }
+  
+  .skill {
+    margin-bottom: 30px;
+  }
+  
+  .skill h4 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    border-radius: 6px;
+  }
+  
+  /* Smooth fill animation */
+  .progress {
+    animation: fillAnimation 2s ease-out forwards;
+  }
+  
+  @keyframes fillAnimation {
+    from {
+      width: 0;
+    }
+    to {
+      /* handled inline in HTML */
+    }
+  }
+/* About Me Section */
+#about {
+    background: #222;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+/* About Me Container */
+.about-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Title Styling */
+.about-container h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+
+/* About Me Text */
+.about-text {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+/* Contact Information Layout */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+
+
+
+/* Title Styling */
+#about h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* Passion Title Styling */
+#about h4 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff9800;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Styled Paragraph */
+#about p {
+    font-size: 20px;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #ddd;
+    padding: 20px;
+    border-left: 5px solid #ff9800;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Arrow Marker at Bottom Center */
+.arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #ffffff;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+/* Navigation Bar: Initially Hidden */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #282c34;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0; /* Make it invisible initially */
+    visibility: hidden; /* Also set visibility to hidden */
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s; /* Smooth transition */
+}
+
+/* Navigation Bar: Becomes Visible */
+nav.visible {
+    opacity: 1; /* Make it visible */
+    visibility: visible; /* Set visibility to visible */
+    transition: opacity 0.5s ease-in-out, visibility 0s 0s; /* Remove delay when visible */
+}
+/* Contact Section */
+#contact {
+    background: #000;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffa500;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 2000px;
+    margin: auto;
+}
+
+/* Contact Form Input & Text Area */
+input, textarea {
+    width: 100%; /* Full width */
+    max-width: 900px; /* Expands width further */
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ff9800;
+    border-radius: 5px;
+    font-size: 18px;
+    background: #000; /* Black background */
+    color: white; /* White text for contrast */
+    display: block; /* Ensures proper alignment */
+}
+
+/* Text Area Height */
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Fix Parent Container Width */
+form {
+    width: 100%;
+    max-width: 500px; /* Expands form width */
+    margin: auto;
+    text-align: center;
+}
+
+/* Placeholder Text Color */
+input::placeholder, textarea::placeholder {
+    color: #888; /* Light grey for better visibility */
+}
+
+
+button {
+    background: #ffa500;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #ffa500;
+}
+
+/* Social Media Links */
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: #ffa500;
+}
